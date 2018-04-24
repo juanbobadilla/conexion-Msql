@@ -11,8 +11,7 @@ public class conectar {
     
     /*creamos metodo para conectar*/
     public Connection conex;
-    
-    
+  
     public Connection conexion(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -27,6 +26,9 @@ public class conectar {
         
         return conex;
     }
+    
+    
+    
     
     
     

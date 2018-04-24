@@ -1,0 +1,14 @@
+module datosApp{
+
+    interface datos{
+        boolean InsertarDatos(in long identificacion,in wstring nombre, in wstring apellido1, in wstring apellido2, in wstring genero);
+        wstring ConsultarDatos(in long identificacion);
+        boolean EliminarDatos(in long identificacion);
+        boolean ActualizarDatos(in long identificacion,in wstring nombre, in wstring apellido1, in wstring apellido2, in wstring genero);
+        wstring ListarDatos();
+        
+        oneway void shutdown();
+        
+    };
+
+};
