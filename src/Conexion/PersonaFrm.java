@@ -31,7 +31,7 @@ public class PersonaFrm extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtPersona = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         txtApellido1 = new javax.swing.JTextField();
         txtApellido2 = new javax.swing.JTextField();
         txtGenero = new javax.swing.JTextField();
@@ -57,7 +57,7 @@ public class PersonaFrm extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setText("GENERO:");
 
-        txtPersona.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        txtNombre.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
 
         txtApellido1.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
 
@@ -114,7 +114,7 @@ public class PersonaFrm extends javax.swing.JFrame {
                                     .addComponent(jLabel1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtPersona)
+                                    .addComponent(txtNombre)
                                     .addComponent(txtApellido1)
                                     .addComponent(txtApellido2)
                                     .addComponent(txtGenero, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
@@ -138,7 +138,7 @@ public class PersonaFrm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txtPersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -166,6 +166,8 @@ public class PersonaFrm extends javax.swing.JFrame {
     private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
         // TODO add your handling code here:
         
+        Persona per =new Persona();
+        per.InsertarDatos(Integer.parseInt(txtIdentificacion.getText()), txtNombre.getText(), txtApellido1.getText(), txtApellido2.getText(), txtGenero.getText());
         
     }//GEN-LAST:event_btnInsertarActionPerformed
 
@@ -219,6 +221,6 @@ public class PersonaFrm extends javax.swing.JFrame {
     private javax.swing.JTextField txtApellido2;
     private javax.swing.JTextField txtGenero;
     private javax.swing.JTextField txtIdentificacion;
-    private javax.swing.JTextField txtPersona;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
