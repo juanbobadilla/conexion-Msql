@@ -9,6 +9,7 @@ import proyectoconect.conectar;
 
 
     public class Persona extends datosApp.datosPOA{
+
         private ORB orb;    
         conectar conex =new conectar();
        
@@ -113,8 +114,9 @@ import proyectoconect.conectar;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "ocurrio un error"+ e.getMessage());
         }     
-        return resultado;            
+        return resultado; 
     }
+
 
     @Override
     public void shutdown() {
