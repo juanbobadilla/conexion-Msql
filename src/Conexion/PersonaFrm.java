@@ -5,6 +5,8 @@
  */
 package Conexion;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author USUARIO
@@ -37,9 +39,9 @@ public class PersonaFrm extends javax.swing.JFrame {
         txtGenero = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         btnInsertar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnListar = new javax.swing.JButton();
+        btnConsultar = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         txtIdentificacion = new javax.swing.JTextField();
 
@@ -76,11 +78,26 @@ public class PersonaFrm extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("jButton2");
+        btnListar.setText("Listar");
+        btnListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("jButton3");
+        btnConsultar.setText("Consultar");
+        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("jButton4");
+        btnActualizar.setText("Actualizar");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel6.setText("IDENTIFICACION:");
@@ -98,10 +115,7 @@ public class PersonaFrm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnInsertar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4))
+                    .addComponent(btnInsertar)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,10 +135,12 @@ public class PersonaFrm extends javax.swing.JFrame {
                                     .addComponent(txtIdentificacion)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(42, 42, 42)
-                                .addComponent(jButton2)
+                                .addComponent(btnListar)
                                 .addGap(37, 37, 37)
-                                .addComponent(jButton3)))))
-                .addContainerGap())
+                                .addComponent(btnConsultar)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(btnActualizar)
+                .addGap(47, 47, 47))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,9 +170,9 @@ public class PersonaFrm extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInsertar)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(btnListar)
+                    .addComponent(btnConsultar)
+                    .addComponent(btnActualizar))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -170,6 +186,25 @@ public class PersonaFrm extends javax.swing.JFrame {
         per.InsertarDatos(Integer.parseInt(txtIdentificacion.getText()), txtNombre.getText(), txtApellido1.getText(), txtApellido2.getText(), txtGenero.getText());
         
     }//GEN-LAST:event_btnInsertarActionPerformed
+
+    private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
+        
+        Persona per =new Persona();
+        String lista = per.ListarDatos();
+        JOptionPane.showMessageDialog(null,lista);
+    }//GEN-LAST:event_btnListarActionPerformed
+
+    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
+        Persona per =new Persona();
+        int indentificacion=Integer.parseInt(txtIdentificacion.getText());
+        String lista= per.ConsultarDatos(indentificacion);
+        JOptionPane.showMessageDialog(null,lista);
+    }//GEN-LAST:event_btnConsultarActionPerformed
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        Persona per =new Persona();
+        per.ActualizarDatos(Integer.parseInt(txtIdentificacion.getText()), txtNombre.getText(), txtApellido1.getText(), txtApellido2.getText(), txtGenero.getText());
+    }//GEN-LAST:event_btnActualizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,10 +242,10 @@ public class PersonaFrm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnInsertar;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnListar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
